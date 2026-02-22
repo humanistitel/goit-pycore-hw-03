@@ -5,6 +5,7 @@ def get_days_from_today(date):
     try:
         given_date = datetime.strptime(date, "%Y-%m-%d").date()
     except ValueError:
+        print(f"Невірний формат дати: '{date}'. Очікується формат 'РРРР-ММ-ДД'.")
         return None
     today = datetime.today().date()
     return (today - given_date).days
